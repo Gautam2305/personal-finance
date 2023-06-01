@@ -1,7 +1,19 @@
 import React from "react";
+import { Form, NavLink } from "react-router-dom";
 
-export const Navbar = () => {
+export const Navbar = ({userName}) => {
+    // const confirmDelete = confirm("Delete all user data?");
     return(
-        <></>
+        <>
+        <NavLink>home button</NavLink>
+        { userName && (
+            <Form
+            method="post"
+            action="/logout"
+            >
+                <button type="submit">Delete user</button>
+            </Form>
+        )}
+        </>
     )
 }
