@@ -1,0 +1,1 @@
+export const waitTime = () => new Promise(res => setTimeout(res, Math.random() * 500))
