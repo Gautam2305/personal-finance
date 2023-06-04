@@ -80,17 +80,19 @@ export const BudgetPage = () => {
 
 const Card = styled.div`
 width: 400px;
-height: 250px;
+height: 280px;
 margin: 1rem 1rem;
 border: 1px solid black;
 border-radius: 1rem;
 h2, h4{
     text-align: center;
+    margin-top: 1rem;
     // color: white;
 }
 progress{
-    margin-left: 6.2rem;
-    width: 50%;
+    margin-left: 3.9rem;
+    margin-top: 2rem;
+    width: 70%;
     height: 20px;
 }
 // background: #335CD7;

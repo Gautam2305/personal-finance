@@ -14,6 +14,7 @@ import { BudgetItem } from "../components/BudgetItem";
 import { Table } from "../components/Table";
 import { Link } from "react-router-dom";
 import { deleteItem } from "../utils/delete-item";
+import styled from "styled-components";
 export const dashboardLoader = () => {
   const userName = fetchData("userName");
   const budgets = fetchData("budgets");
@@ -111,11 +112,13 @@ export const Dashboard = () => {
             )}
             <div>
               <h2>Existing Budgets</h2>
-              <div>
+              <Row>
                 {budgets?.map((budget) => (
-                  <BudgetItem key={budget.id} budget={budget} />
-                ))}
-              </div>
+                  <Card>
+                    <BudgetItem key={budget.id} budget={budget} />
+                    </Card>
+                  ))}
+              </Row>
             </div>
   
             {expenses && expenses?.length > 0 && (
@@ -136,3 +139,30 @@ export const Dashboard = () => {
     </>
   );
 };
+
+const Card = styled.div`
+  border: 1px solid black;
+  width: 250px;
+  height: 250px;
+  margin: 2rem 1rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  background: linear-gradient(to right, #335cd7, #647dee);
+  h2, h4{
+    text-align: center;
+    margin: 1rem 3.2rem;
+  }
+  progress{
+      margin-left: 2rem;
+      margin-top: 0.4rem;
+      width: 75%;
+      height: 20px;
+  }
+`
+
+const Row = styled.div`
+  display: flex;
+  // flex-wrap: nowrap;
+  overflow-y: hidden;
+  overflow-x: auto;
+`
