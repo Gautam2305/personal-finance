@@ -6,6 +6,7 @@ import { useLoaderData } from "react-router";
 import { fetchData } from "../utils/data-fetch";
 import { Home } from "../components/Home";
 import { toast } from "react-toastify";
+import styled from "styled-components";
 import { AddBudget } from "../components/AddBudget";
 import { addBudget } from "../utils/add-budget";
 import { AddExpense } from "../components/AddExpense";
@@ -14,6 +15,7 @@ import { BudgetItem } from "../components/BudgetItem";
 import { Table } from "../components/Table";
 import { Link } from "react-router-dom";
 import { deleteItem } from "../utils/delete-item";
+
 export const dashboardLoader = () => {
   const userName = fetchData("userName");
   const budgets = fetchData("budgets");
@@ -75,64 +77,42 @@ export const Dashboard = () => {
   const { userName, budgets, expenses } = useLoaderData();
   // console.log(budgets);
   return (
-    <>
+    
       <div className={`${styles.dashboard}`}>
         {userName ? (
-          <div>
-            <h1 className={`${styles.userTitle}`}>Welcome {userName}</h1>
-            {budgets && budgets.length > 0 ? (
-              <div className={`${styles.carousel}`}>
-                <div>
-                <Carousel variant="dark" interval={null} >
-                  <Carousel.Item >
-                  <AddBudget />
-                  <Carousel.Caption />
-                  </Carousel.Item>
-                  <Carousel.Item >
-                  <AddExpense budgets={budgets} />
-                    <Carousel.Caption/>
-                    
-                  </Carousel.Item>
-                </Carousel>
-           
-                </div>
-              
-   
-              </div>
-            ) : (
-              <div>
-                {/* <p>personal budgeting is the GOAT </p> */}
-                <p className={`${styles.desc}`}>
-                  create a budget to get started ! huhu
-                </p>
-
-                <AddBudget />
-              </div>
-            )}
+        <div>
+            <h1>Welcome {userName}</h1>
+            {(budgets && budgets.length > 0) ?
+            (<div>
+                <AddBudget/>
+                <AddExpense budgets={budgets}/>
+            </div>) 
+            :
+            (<div>
+                <p>personal budgeting is the GOAT </p>
+                create a budget to get started !
+                huhu
+                <AddBudget/>
+            </div>)}
             <div>
-              <h2>Existing Budgets</h2>
-              <div>
-                {budgets?.map((budget) => (
-                  <BudgetItem key={budget.id} budget={budget} />
-                ))}
-              </div>
+                <h2>Existing Budgets</h2>
+                <div>
+                    {budgets?.map(budget => (
+                        <BudgetItem key={budget.id} budget={budget}/>
+                    ))}
+                </div>
             </div>
-  
-            {expenses && expenses?.length > 0 && (
-              <Table
-                expenses={expenses
-                  .sort((a, b) => b.createdAt - a.createdAt)
-                  .slice(0, 8)}
-              />
+            {
+                expenses && expenses?.length> 0 && (
+                    <Table expenses={expenses.sort((a,b) => b.createdAt - a.createdAt).slice(0,8)} />
+                    
+            
             )}
             {expenses?.length > 8 && (
               <Link to="/expenses">View all expenses</Link>
             )}
-          </div>
-        ) : (
-          <Home />
-        )}
+        </div>
+        ) : <Home/>}
       </div>
-    </>
-  );
-};
+    )
+}

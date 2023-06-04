@@ -7,6 +7,7 @@ import { Table } from "../components/Table";
 import { deleteItem } from "../utils/delete-item";
 import { toast } from "react-toastify";
 import { addExpense } from "../utils/add-expense";
+import styled from "styled-components";
 export const budgetLoader = async({params}) => {
     const budget = await getAllItems({
         category: "budgets",
@@ -59,10 +60,10 @@ export const BudgetPage = () => {
     return(
         <div>
             <h1>{budget.name} Overview</h1>
-            <div>
+            <Card>
                 <BudgetItem budget={budget}/>
+            </Card>
                 <AddExpense budgets={[budget]}/>
-            </div>
             <div>
             {
                 expenses && expenses.length >0 && (
@@ -76,3 +77,23 @@ export const BudgetPage = () => {
         </div>
     )
 }
+
+const Card = styled.div`
+width: 400px;
+height: 250px;
+margin: 1rem 1rem;
+border: 1px solid black;
+border-radius: 1rem;
+h2, h4{
+    text-align: center;
+    // color: white;
+}
+progress{
+    margin-left: 6.2rem;
+    width: 50%;
+    height: 20px;
+}
+// background: #335CD7;
+// background: linear-gradient(to right, #2193b0, #6dd5ed)
+background: linear-gradient(to right, #335cd7, #647dee);
+`
