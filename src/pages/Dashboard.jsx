@@ -77,7 +77,7 @@ export const Dashboard = () => {
   const { userName, budgets, expenses } = useLoaderData();
   // console.log(budgets);
   return (
-    <>
+    
       <div className={`${styles.dashboard}`}>
         {userName ? (
         <div>
@@ -113,6 +113,6 @@ export const Dashboard = () => {
             )}
         </div>
         ) : <Home/>}
-        </>
+      </div>
     )
 }
