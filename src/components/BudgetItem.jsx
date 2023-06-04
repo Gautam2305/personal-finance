@@ -11,9 +11,8 @@ export const BudgetItem = ({budget, showDelete=false}) => {
     const spent = calculateBudget(id);
     return (
         <div key={id}>
-            <div>
-            <h2>{name}</h2>
-            <h4>{formatCurrency(amount)} allotted</h4>
+            <h2><b>{name}</b></h2>
+            <h4><b>{formatCurrency(amount)} allotted </b></h4>
             <progress max={amount} value={spent}>
                 {calculatePercentage(spent/amount)}
             </progress>
@@ -39,7 +38,6 @@ export const BudgetItem = ({budget, showDelete=false}) => {
                 }
             </Wrapper>
             </div>
-            </div>
     )
 }
 
@@ -52,7 +50,6 @@ const Wrapper = styled.div`
     margin-left: 2rem;
     margin-top: 2rem;
 `
-
 const linkStyle = {
     color: "black",
     // textDecoration: "none",
