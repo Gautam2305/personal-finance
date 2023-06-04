@@ -1,0 +1,21 @@
+
+.userTitle{
+    color: rgb(236, 13, 173);
+    margin: 1rem;
+}
+.desc{
+margin: 1rem;
+ font-size: 1.25rem;
+
+}
+.carousel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+}
+@media screen and (max-width: 450px) {
+    .carousel{
+        margin-left: 5.5rem;
+    }
+}

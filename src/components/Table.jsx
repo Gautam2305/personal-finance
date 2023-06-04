@@ -15,6 +15,7 @@ export const Table = ({expenses, showBudget = true}) => {
                     </tr>
                 </thead>
                 <tbody>
+
                     {
                         expenses.map(expense => (
                             <tr key={expense.id}>
