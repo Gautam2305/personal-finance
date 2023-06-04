@@ -3,6 +3,7 @@ import { formatCurrency } from "../utils/format-currency";
 import { calculateBudget } from "../utils/calc-budget";
 import { calculatePercentage } from "../utils/calc-percentage";
 import { Form, Link } from "react-router-dom";
+import styled from "styled-components";
 
 export const BudgetItem = ({ budget, showDelete = false }) => {
   const { id, name, amount } = budget;

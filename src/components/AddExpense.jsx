@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 import styles from "../components/AddExpense.module.css";
 import { useFetcher, Form } from "react-router-dom";
 import { useRef } from "react";
+
 export const AddExpense = ({budgets}) => {
     const fetcher = useFetcher();
     const isSubmitting = fetcher.state === "submitting";
