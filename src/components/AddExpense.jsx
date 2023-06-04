@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import { useFetcher, Form } from "react-router-dom";
 import { useRef } from "react";
+
 export const AddExpense = ({budgets}) => {
     const fetcher = useFetcher();
     const isSubmitting = fetcher.state === "submitting";

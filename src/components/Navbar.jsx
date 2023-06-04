@@ -5,7 +5,7 @@ export const Navbar = ({userName}) => {
     // const confirmDelete = confirm("Delete all user data?");
     return(
         <>
-        <NavLink>home button</NavLink>
+        <NavLink>Home button</NavLink>
         { userName && (
             <Form
             method="post"

@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router";
 import { fetchData } from "../utils/data-fetch";
 import { Home } from "../components/Home";
 import { toast } from "react-toastify";
+import styled from "styled-components";
 import { AddBudget } from "../components/AddBudget";
 import { addBudget } from "../utils/add-budget";
 import { AddExpense } from "../components/AddExpense";
@@ -11,6 +12,7 @@ import { BudgetItem } from "../components/BudgetItem";
 import { Table } from "../components/Table";
 import { Link } from "react-router-dom";
 import { deleteItem } from "../utils/delete-item";
+
 export const dashboardLoader = () => {
     const userName = fetchData("userName");
     const budgets = fetchData("budgets");
@@ -89,14 +91,16 @@ export const Dashboard = () => {
                 huhu
                 <AddBudget/>
             </div>)}
-            <div>
-                <h2>Existing Budgets</h2>
-                <div>
-                    {budgets?.map(budget => (
-                        <BudgetItem key={budget.id} budget={budget}/>
-                    ))}
-                </div>
-            </div>
+            
+                    <h2>Existing Budgets</h2>
+                        <Row>
+                        {budgets?.map(budget => (
+                                
+                                <Card>
+                                    <BudgetItem key={budget.id} budget={budget} />
+                                    </Card>
+                        ))}
+                        </Row>
             {
                 expenses && expenses?.length> 0 && (
                     <Table expenses={expenses.sort((a,b) => b.createdAt - a.createdAt).slice(0,8)} />
@@ -111,3 +115,29 @@ export const Dashboard = () => {
         </>
     )
 }
+
+const Card = styled.div`
+// width: 400px;
+height: 250px;
+margin: 1rem 1rem;
+border: 1px solid black;
+border-radius: 1rem;
+h2, h4{
+    text-align: center;
+    // color: white;
+}
+progress{
+    margin: 0 2rem;
+    height: 20px;
+}
+// background: #335CD7;
+// background: linear-gradient(to right, #2193b0, #6dd5ed)
+background: linear-gradient(to right, #335cd7, #647dee);
+`
+
+const Row = styled.div`
+    display: flex;
+    flex- direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+`
