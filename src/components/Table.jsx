@@ -1,12 +1,13 @@
 import React from "react";
 import { ExpenseItem } from "./ExpenseItem";
+import "./Table.css";
 
 export const Table = ({expenses, showBudget = true}) => {
     return(
         <div>
             <table>
                 <thead>
-                    <tr>
+                    <tr className="topline">
                         {
                             ["Name", "Amount" ,"Date",showBudget ? "Budget": "",""].map((item,index) => (
                                 <th key={index}>{item}</th>
