@@ -37,7 +37,7 @@ export const dashboardAction = async ({ request }) => {
     try {
       addBudget({
         name: values.newBudget,
-        amount: values.newBudgetAmount,
+        amount: values.amount,
       });
       return toast.success("budget created!");
     } catch (err) {
@@ -83,21 +83,17 @@ export const Dashboard = () => {
             {budgets && budgets.length > 0 ? (
               <div className={`${styles.carousel}`}>
                 <div>
-                <Carousel variant="dark" interval={null} >
-                  <Carousel.Item >
-                  <AddBudget />
-                  <Carousel.Caption />
-                  </Carousel.Item>
-                  <Carousel.Item >
-                  <AddExpense budgets={budgets} />
-                    <Carousel.Caption/>
-                    
-                  </Carousel.Item>
-                </Carousel>
-           
+                  <Carousel variant="dark" interval={null}>
+                    <Carousel.Item>
+                      <AddBudget />
+                      <Carousel.Caption />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                      <AddExpense budgets={budgets} />
+                      <Carousel.Caption />
+                    </Carousel.Item>
+                  </Carousel>
                 </div>
-              
-   
               </div>
             ) : (
               <div>
@@ -117,7 +113,7 @@ export const Dashboard = () => {
                 ))}
               </div>
             </div>
-  
+
             {expenses && expenses?.length > 0 && (
               <Table
                 expenses={expenses
