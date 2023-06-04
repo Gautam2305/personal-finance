@@ -1,4 +1,5 @@
 import React, {useEffect} from "react";
+import styles from "../components/AddExpense.module.css";
 import { useFetcher, Form } from "react-router-dom";
 import { useRef } from "react";
 export const AddExpense = ({budgets}) => {
@@ -15,10 +16,12 @@ export const AddExpense = ({budgets}) => {
         }
     }, [isSubmitting])
     return(
-        <div>
-            <h2> Add New <span> {budgets?.length === 1 && `${budgets.map(budget => budget.name)}`} </span> Expense </h2>
-            <Form ref={formRef} method="post">
-                <div>
+        <div className={`${styles.createexpense}`}>
+           
+            <Form ref={formRef} method="post" className={`${styles.expenseform}`}>
+            <div className={`${styles.header}`}> {budgets?.length === 1 && `${budgets.map(budget => budget.name)}`} </div>
+            <h2 className={`${styles.head}`}> Add New  Expense </h2>
+                
                     <label htmlFor="newExpense">Expense Name</label>
                     <input 
                     ref={focusRef}
@@ -28,8 +31,8 @@ export const AddExpense = ({budgets}) => {
                     placeholder="e.g., Apple"
                     required
                     />
-                </div>
-                <div>
+                
+           
                     <label htmlFor="newExpenseAmount">Amount</label>
                     <input 
                     type="text"
@@ -40,10 +43,12 @@ export const AddExpense = ({budgets}) => {
                     step="0.01"
                     required
                     />
-                </div>
+            
                 <div hidden={budgets.length === 1}>
                 <label htmlFor="newExpenseBudget">Budget category</label>
-                <select name="newExpenseBudget" id="newExpenseBudget" required>
+                <select name="newExpenseBudget" id="newExpenseBudget" 
+                
+                required>
                     {
                         budgets.sort((a,b)=> a.createdAt -b.createdAt).map(budget => {
                             return(
@@ -57,7 +62,9 @@ export const AddExpense = ({budgets}) => {
                 </div>
                 <input type="hidden" name="_action" value="createExpense"/>
 
-                <button type="submit" disabled={isSubmitting}>
+                <button type="submit" 
+                className={`${styles.createbtn}`} 
+                disabled={isSubmitting}>
                     {isSubmitting ? <span>Creating Expense...</span>: <span>Create Expense</span> }
                 </button>
             </Form>
