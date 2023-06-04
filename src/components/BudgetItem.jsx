@@ -31,3 +31,19 @@ export const BudgetItem = ({ budget, showDelete = false }) => {
     </div>
   );
 };
+
+
+const Center = styled.div`
+    text-align: center;
+    color: white;
+`
+const Wrapper = styled.div`
+    // margin: 2rem 0rem;
+    margin-left: 2rem;
+    margin-top: 2rem;
+`
+const linkStyle = {
+    color: "black",
+    // textDecoration: "none",
+    padding: "2px",
+}
