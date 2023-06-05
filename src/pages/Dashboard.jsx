@@ -6,7 +6,6 @@ import { useLoaderData } from "react-router";
 import { fetchData } from "../utils/data-fetch";
 import { Home } from "../components/Home";
 import { toast } from "react-toastify";
-import styled from "styled-components";
 import { AddBudget } from "../components/AddBudget";
 import { addBudget } from "../utils/add-budget";
 import { AddExpense } from "../components/AddExpense";
@@ -15,7 +14,7 @@ import { BudgetItem } from "../components/BudgetItem";
 import { Table } from "../components/Table";
 import { Link } from "react-router-dom";
 import { deleteItem } from "../utils/delete-item";
-
+import styled from "styled-components";
 export const dashboardLoader = () => {
   const userName = fetchData("userName");
   const budgets = fetchData("budgets");
@@ -39,7 +38,7 @@ export const dashboardAction = async ({ request }) => {
     try {
       addBudget({
         name: values.newBudget,
-        amount: values.newBudgetAmount,
+        amount: values.amount,
       });
       return toast.success("budget created!");
     } catch (err) {
@@ -77,42 +76,90 @@ export const Dashboard = () => {
   const { userName, budgets, expenses } = useLoaderData();
   // console.log(budgets);
   return (
-    
+    <>
       <div className={`${styles.dashboard}`}>
         {userName ? (
-        <div>
-            <h1>Welcome {userName}</h1>
-            {(budgets && budgets.length > 0) ?
-            (<div>
-                <AddBudget/>
-                <AddExpense budgets={budgets}/>
-            </div>) 
-            :
-            (<div>
-                <p>personal budgeting is the GOAT </p>
-                create a budget to get started !
-                huhu
-                <AddBudget/>
-            </div>)}
-            <div>
-                <h2>Existing Budgets</h2>
+          <div>
+            <h1 className={`${styles.userTitle}`}>Welcome {userName}</h1>
+            {budgets && budgets.length > 0 ? (
+              <div className={`${styles.carousel}`}>
                 <div>
-                    {budgets?.map(budget => (
-                        <BudgetItem key={budget.id} budget={budget}/>
-                    ))}
+                  <Carousel variant="dark" interval={null}>
+                    <Carousel.Item>
+                      <AddBudget />
+                      <Carousel.Caption />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                      <AddExpense budgets={budgets} />
+                      <Carousel.Caption />
+                    </Carousel.Item>
+                  </Carousel>
                 </div>
+              </div>
+            ) : (
+              <div>
+                <p className={`${styles.desc}`}>
+                  Create a budget to get started
+                </p>
+
+                <AddBudget />
+              </div>
+            )}
+            <div>
+              <h2>Existing Budgets</h2>
+              
+
+              <Row>
+                {budgets?.map((budget) => (
+                  <Card>
+                    <BudgetItem key={budget.id} budget={budget} />
+                    </Card>
+                  ))}
+              </Row>
             </div>
-            {
-                expenses && expenses?.length> 0 && (
-                    <Table expenses={expenses.sort((a,b) => b.createdAt - a.createdAt).slice(0,8)} />
-                    
-            
+  
+            {expenses && expenses?.length > 0 && (
+              <Table
+                expenses={expenses
+                  .sort((a, b) => b.createdAt - a.createdAt)
+                  .slice(0, 8)}
+              />
             )}
             {expenses?.length > 8 && (
               <Link to="/expenses">View all expenses</Link>
             )}
-        </div>
-        ) : <Home/>}
+          </div>
+        ) : (
+          <Home />
+        )}
       </div>
-    )
-}
+    </>
+  );
+};
+
+const Card = styled.div`
+  border: 1px solid black;
+  width: 250px;
+  height: 250px;
+  margin: 2rem 1rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  background: linear-gradient(to right, #335cd7, #647dee);
+  h2, h4{
+    text-align: center;
+    margin: 1rem 3.2rem;
+  }
+  progress{
+      margin-left: 2rem;
+      margin-top: 0.4rem;
+      width: 75%;
+      height: 20px;
+  }
+`
+
+const Row = styled.div`
+  display: flex;
+  // flex-wrap: nowrap;
+  overflow-y: hidden;
+  overflow-x: auto;
+`
