@@ -139,8 +139,8 @@ export const Dashboard = () => {
 
 const Card = styled.div`
   border: 1px solid black;
-  width: 250px;
-  height: 250px;
+  width: 270px;
+  height: 270px;
   margin: 2rem 1rem;
   border: 1px solid black;
   border-radius: 1rem;

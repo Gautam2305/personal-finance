@@ -10,24 +10,25 @@ export const BudgetItem = ({ budget, showDelete = false }) => {
   const spent = calculateBudget(id);
   return (
     <div key={id}>
-      <h3>{name}</h3>
-      <h4>{formatCurrency(amount)} allotted</h4>
+      <div><h2>{name}</h2>
+        <h4><b>{formatCurrency(amount)} allotted</b></h4>
+        </div>
       <progress max={amount} value={spent}>
         {calculatePercentage(spent / amount)}
       </progress>
-      <div>
+      <Center>
         <small>{formatCurrency(spent)} spent</small>
         <small>{formatCurrency(amount - spent)} remaining</small>
-      </div>
-      <div>
+      </Center>
+      <Wrapper>
         {showDelete ? (
           <Form method="post" action="delete">
             <button type="submit">Delete Budget</button>
           </Form>
         ) : (
-          <Link to={`/budget/${id}`}>View Details</Link>
+          <Link to={`/budget/${id}`} style={linkStyle}>View Details</Link>
         )}
-      </div>
+      </Wrapper>
     </div>
   );
 };
@@ -36,6 +37,9 @@ export const BudgetItem = ({ budget, showDelete = false }) => {
 const Center = styled.div`
     text-align: center;
     color: white;
+    // h3, h4{
+    //   margin-top: 1rem;
+    // }
 `
 const Wrapper = styled.div`
     // margin: 2rem 0rem;
@@ -45,5 +49,6 @@ const Wrapper = styled.div`
 const linkStyle = {
     color: "black",
     // textDecoration: "none",
-    padding: "2px",
+  padding: "2px",
+  // margin: "2rem",
 }
