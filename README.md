@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# MoneyMinder
+## Your personal finance tracker
+<hr>
+Live site: https://jolly-forest-073f45810.3.azurestaticapps.net/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1.INTRODUCTION:
+  		 The Expense Tracker App is a web-based application that helps users track and manage their expenses effectively. This documentation provides a comprehensive explanation of the website for the Expense Tracker App, including its features, functionalities, and overall structure.
 
-## Available Scripts
+2. Purpose:
+   		The website serves as the primary interface for users to access the Expense Tracker App. It aims to provide an intuitive and user-friendly experience, enabling users to easily track and analyse their expenses, set budget goals, and gain insights into their spending habits.
 
-In the project directory, you can run:
+3. Homepage:
+   		The homepage serves as the landing page for the website. It typically includes the following sections:
+![1](https://github.com/Gautam2305/personal-finance/assets/95231941/d3c3f060-c5cf-4815-a564-a8e4ca681bcd)
+ 
+- Header: 
+Contains the app logo, navigation menu, and create account buttons.
+   - Call-to-Action: 
+Prompts users create an account to start using the app.
+4. Dashboard:
+   		After logging in, users are directed to the dashboard, which is the central hub for managing expenses. The dashboard contains
 
-### `npm start`
+ ![2](https://github.com/Gautam2305/personal-finance/assets/95231941/8863c72b-4a47-4dab-bff6-cd44271a1321)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   -Budget Tracker:
+	   The app supports categorizing expenses into different categories (e.g., Food, Transportation, Entertainment) and assigning tags for better organization. Users can create custom categories or use predefined ones to ensure accurate tracking and analysis.
+- Expense Tracker:
+ Allows users to add, categorize, and edit expenses according to the budgets.
+   - Visualization:
+ Provides visual representations of spending patterns through tables.
 
-### `npm test`
+![3](https://github.com/Gautam2305/personal-finance/assets/95231941/d5356fd2-9822-4460-8ba3-138246fd4993)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ 
+-Budget History:
+	Displays a list of added budgets
 
-### `npm run build`
+ ![4](https://github.com/Gautam2305/personal-finance/assets/95231941/84050ea4-0fef-4200-9f0c-bddb35594431)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   -Expenses History:
+ Displays a list of past transactions, including date, amount, and category.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ ![5](https://github.com/Gautam2305/personal-finance/assets/95231941/b36bece2-ee62-4782-8aca-6fba185dfb84)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The app also shows the individual overview of each budget category which includes the details like money allotted and spent, and also about the expenses and expenditure of the respective budget.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ ![6](https://github.com/Gautam2305/personal-finance/assets/95231941/85035274-0a51-4b83-9c57-a1c650165552)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Deleting Credentials:
+	If the user wishes to desist using our app or wishes to delete their info, they can click on “delete user” button which is available at every page that erases the user’s credentials and also their saved expenditure tracking.
+  
+ 
+![7](https://github.com/Gautam2305/personal-finance/assets/95231941/5e20fe5f-4a23-43cc-823d-90a35cc73cc0)
