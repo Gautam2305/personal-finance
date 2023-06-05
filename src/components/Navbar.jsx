@@ -7,8 +7,9 @@ export const Navbar = ({userName}) => {
     // const confirmDelete = confirm("Delete all user data?");
     return(
         <>
-        <div className={`${styles.navlinks}`}>
-        <div className={`${styles.navlink}`}>
+            <div className={`${styles.navlinks}`}>
+                <h1 className="ms-5" style={{color: "white"}}>MoneyMinder</h1>
+        <div className={`${styles.navlink} ms-auto`}>
         <NavLink style={{textDecoration:'none',color:'white'}}><FaHome className="ctr"/> Home</NavLink>
         </div>
         { userName && (
