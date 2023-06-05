@@ -38,7 +38,7 @@ export const dashboardAction = async ({ request }) => {
     try {
       addBudget({
         name: values.newBudget,
-        amount: values.newBudgetAmount,
+        amount: values.amount,
       });
       return toast.success("budget created!");
     } catch (err) {
@@ -84,27 +84,22 @@ export const Dashboard = () => {
             {budgets && budgets.length > 0 ? (
               <div className={`${styles.carousel}`}>
                 <div>
-                <Carousel variant="dark" interval={null} >
-                  <Carousel.Item >
-                  <AddBudget />
-                  <Carousel.Caption />
-                  </Carousel.Item>
-                  <Carousel.Item >
-                  <AddExpense budgets={budgets} />
-                    <Carousel.Caption/>
-                    
-                  </Carousel.Item>
-                </Carousel>
-           
+                  <Carousel variant="dark" interval={null}>
+                    <Carousel.Item>
+                      <AddBudget />
+                      <Carousel.Caption />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                      <AddExpense budgets={budgets} />
+                      <Carousel.Caption />
+                    </Carousel.Item>
+                  </Carousel>
                 </div>
-              
-   
               </div>
             ) : (
               <div>
-                {/* <p>personal budgeting is the GOAT </p> */}
                 <p className={`${styles.desc}`}>
-                  create a budget to get started ! huhu
+                  Create a budget to get started
                 </p>
 
                 <AddBudget />
@@ -112,6 +107,8 @@ export const Dashboard = () => {
             )}
             <div>
               <h2>Existing Budgets</h2>
+              
+
               <Row>
                 {budgets?.map((budget) => (
                   <Card>
