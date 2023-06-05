@@ -4,25 +4,23 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-   padding: 5rem;
+    padding: 5rem;
    
 }
 .head{
     text-align: center;
-    font-weight: 500;
+    font-weight: 700;
     text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
 }
 .budform{
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
-    border: 1px solid black;
-    border-radius: 4rem 0.2rem 4rem 0.2rem;
+    border-radius: 4rem;
     padding: 2.5rem;
-    box-shadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
-    /* background: #2e2b2b; */
- 
+    box-shadow: 0px 0px 10px 5px rgba(112, 111, 111, 0.5);
 }
 .budform label{
 
@@ -40,13 +38,12 @@
 .createbtn{
     border: none;
     padding: 0.5rem;
-    background: #335cd7;
+    background: rgb(20, 131, 229);
     color: white;
     font-size: 1.25rem;
     font-weight: 500;
     border-radius: 10rem;
     margin-top: 2rem;
-    
 }
 @media screen and (max-width: 450px) {
     .budform{

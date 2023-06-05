@@ -4,7 +4,9 @@ import "./Table.css";
 
 export const Table = ({expenses, showBudget = true}) => {
     return(
-        <div>
+        <div style={{
+            margin: '2rem'
+        }}>
             <table>
                 <thead>
                     <tr className="topline">

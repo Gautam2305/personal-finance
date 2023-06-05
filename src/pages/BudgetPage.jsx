@@ -58,8 +58,14 @@ export const budgetAction = async ({ request }) => {
 export const BudgetPage = () => {
   const { budget, expenses } = useLoaderData();
   return (
-    <div>
-      <h1>{budget.name} Overview</h1>
+    <div style={{
+      textAlign: 'center',
+      margin: 'auto'
+    }}>
+      <h1 style={{
+        fontFamily:'Poppins,sans-serif',
+        fontWeight: 600
+      }}><span style={{color: 'rgb(20,131,239'}}>{budget.name}</span> Overview</h1>
       <Card>
         <BudgetItem budget={budget} />
       </Card>
@@ -67,7 +73,10 @@ export const BudgetPage = () => {
       <div>
         {expenses && expenses.length > 0 && (
           <div>
-            <h2>{budget.name} Expenses</h2>
+            <h2 style={{
+        fontFamily:'Poppins,sans-serif',
+        fontWeight: 600
+      }}>{budget.name} Expenses</h2>
             <Table expenses={expenses} showBudget={false} />
           </div>
         )}
@@ -79,14 +88,14 @@ export const BudgetPage = () => {
 const Card = styled.div`
   width: 400px;
   height: 280px;
-  margin: 1rem 1rem;
+  margin: auto;
   border: 1px solid black;
   border-radius: 1rem;
   h2,
   h4 {
     text-align: center;
     margin-top: 1rem;
-    // color: white;
+    color: white;
   }
   progress {
     margin-left: 3.9rem;
@@ -94,7 +103,5 @@ const Card = styled.div`
     width: 70%;
     height: 20px;
   }
-  // background: #335CD7;
-  // background: linear-gradient(to right, #2193b0, #6dd5ed)
   background: linear-gradient(to right, #335cd7, #647dee);
 `;
