@@ -6,5 +6,5 @@ export const deleteItem = ({ key, id }) => {
     return localStorage.setItem(key, JSON.stringify(newData));
   }
 
-  //   return localStorage.removeItem(key);
+  return localStorage.removeItem(key);
 };
