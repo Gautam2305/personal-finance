@@ -3,10 +3,10 @@ import { fetchData } from "./data-fetch";
 export const calculateBudget = (budgetId) => {
   const expenses = fetchData("expenses") ?? [];
   const budgetSpent = expenses.reduce((acc, expense) => {
-    if (expense.id === budgetId.id) return acc;
+    if (expense.budgetId !== budgetId) return acc;
     return (acc += expense.amount);
   }, 0);
   return budgetSpent;
 };
 
-// Will the functionality break if i equate?
+// Changes: Budget id is the attribute of the object to be not equal to
