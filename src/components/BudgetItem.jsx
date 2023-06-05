@@ -37,9 +37,9 @@ export const BudgetItem = ({ budget, showDelete = false }) => {
 const Center = styled.div`
     text-align: center;
     color: white;
-    // h3, h4{
-    //   margin-top: 1rem;
-    // }
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
 `
 const Wrapper = styled.div`
     // margin: 2rem 0rem;
@@ -47,8 +47,11 @@ const Wrapper = styled.div`
     margin-top: 2rem;
 `
 const linkStyle = {
-    color: "black",
-    // textDecoration: "none",
-  padding: "2px",
-  // margin: "2rem",
+    color: "white",
+    textDecoration: "none",
+    padding: "2px",
+    width: '4rem',
+    textAlign: 'center',
+    fontSize: "1.1rem",
+    fontWeight: '700',
 }

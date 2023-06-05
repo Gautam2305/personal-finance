@@ -80,7 +80,7 @@ export const Dashboard = () => {
       <div className={`${styles.dashboard}`}>
         {userName ? (
           <div>
-            <h1 className={`${styles.userTitle}`}>Welcome {userName}</h1>
+            <h1 className={`${styles.userTitle}`}>Welcome <span className={`${styles.username}`}>{userName}</span></h1>
             {budgets && budgets.length > 0 ? (
               <div className={`${styles.carousel}`}>
                 <div>
@@ -126,7 +126,10 @@ export const Dashboard = () => {
               />
             )}
             {expenses?.length > 8 && (
-              <Link to="/expenses">View all expenses</Link>
+              <Link to="/expenses" style={{
+                textDecoration: 'none',
+                
+              }}>View all expenses</Link>
             )}
           </div>
         ) : (
@@ -141,6 +144,7 @@ const Card = styled.div`
   border: 1px solid black;
   width: 270px;
   height: 270px;
+  color: white;
   margin: 2rem 1rem;
   border: 1px solid black;
   border-radius: 1rem;
@@ -154,6 +158,7 @@ const Card = styled.div`
       margin-top: 0.4rem;
       width: 75%;
       height: 20px;
+      color: 
   }
 `
 
@@ -163,3 +168,4 @@ const Row = styled.div`
   overflow-y: hidden;
   overflow-x: auto;
 `
+

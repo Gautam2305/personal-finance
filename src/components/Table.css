@@ -6,7 +6,7 @@ table,thead,td{
 }
 
 .topline{
-    background-color: #533df9;
+    background-color: rgb(20, 131, 229);
     color: white;
     border-radius:3px;
 }

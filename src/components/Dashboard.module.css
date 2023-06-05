@@ -1,7 +1,12 @@
 
 .userTitle{
-    color: rgb(236, 13, 173);
+    color: rgb(132, 131, 132);
     margin: 1rem;
+    font-weight: 800;
+}
+.username{
+    color:rgb(20, 131, 229);
+    
 }
 .desc{
 margin: 1rem;
