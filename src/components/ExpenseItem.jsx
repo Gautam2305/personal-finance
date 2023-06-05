@@ -29,9 +29,7 @@ export const ExpenseItem = ({ expense, showBudget }) => {
         <fetcher.Form method="post">
           <input type="hidden" name="_action" value="deleteExpense" />
           <input type="hidden" name="expenseId" value={expense.id} />
-          <button type="submit" name="expenseId">
-            Delete
-          </button>
+          <button type="submit">Delete</button>
         </fetcher.Form>
       </td>
     </>
