@@ -9,7 +9,7 @@ export const BudgetItem = ({ budget, showDelete = false }) => {
   const { id, name, amount } = budget;
   const spent = calculateBudget(id);
   return (
-    <div key={id}>
+    <div  key={id}>
       <div><h2>{name}</h2>
         <h4><b>{formatCurrency(amount)} allotted</b></h4>
         </div>
@@ -33,18 +33,17 @@ export const BudgetItem = ({ budget, showDelete = false }) => {
   );
 };
 
-
 const Center = styled.div`
     text-align: center;
     color: white;
     display: flex;
     justify-content: space-between;
-    padding: 0 1rem;
+    gap: 1rem;
+    font-family: 'Poppins','sans-serif';
 `
 const Wrapper = styled.div`
-    // margin: 2rem 0rem;
-    margin-left: 2rem;
-    margin-top: 2rem;
+    margin: auto;
+    text-align: center;
 `
 const linkStyle = {
     color: "white",

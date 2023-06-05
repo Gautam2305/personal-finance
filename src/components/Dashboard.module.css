@@ -9,9 +9,15 @@
     
 }
 .desc{
-margin: 1rem;
- font-size: 1.25rem;
-
+    margin: 1rem;
+    font-size: 1.5rem;
+    font-family: 'Poppins','sans-serif';
+    font-weight: 600;
+}
+.budgetHead{
+    text-align: center;
+    font-family: 'Poppins','sans-serif';
+    font-weight: 700;
 }
 .carousel{
     display: flex;

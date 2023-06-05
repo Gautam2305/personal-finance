@@ -30,7 +30,14 @@ export const ExpenseItem = ({ expense, showBudget }) => {
 
           </fetcher.Form>
           {typeof budget !== "undefined" ? (
-            <Link to={`/budget/${budget.id}`}>{budget.name}</Link>
+            <Link to={`/budget/${budget.id}`} style={{
+              textDecoration:'none',
+              backgroundColor: 'rgb(45 162 149)',
+              fontWeight: '700',
+              color: 'white',
+              padding: '0.25rem 0.5rem',
+              borderRadius: '1rem'
+            }}>{budget.name}</Link>
           ) : (
             ""
           )}
@@ -40,7 +47,7 @@ export const ExpenseItem = ({ expense, showBudget }) => {
         <fetcher.Form method="post">
           <input type="hidden" name="_action" value="deleteExpense" />
           <input type="hidden" name="expenseId" value={expense.id} />
-          <Button type="submit"><FaTrash color="red"/></Button>
+          <Button type="submit"><FaTrash color="#ce2b2b"/></Button>
         </fetcher.Form>
       </td>
     </>

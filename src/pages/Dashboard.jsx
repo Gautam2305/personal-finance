@@ -106,7 +106,7 @@ export const Dashboard = () => {
               </div>
             )}
             <div>
-              <h2>Existing Budgets</h2>
+              <h2 className={`${styles.budgetHead}`}>Existing Budgets</h2>
               
 
               <Row>

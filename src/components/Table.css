@@ -1,18 +1,18 @@
 table,thead,td{
     border:2px solid black;
     border-collapse: collapse;
-    padding: 0.75rem;
-    font-size: 15px;
+    padding: 1rem;
+    font-size: 1.1rem;
+    width: 60%;
 }
 
 .topline{
     background-color: rgb(20, 131, 229);
     color: white;
-    border-radius:3px;
 }
-
 td{
     text-align: center;
+    font-family: 'Poppins','sans-serif';
 }
 
 tr:nth-child(even) {
@@ -33,5 +33,6 @@ table{
 
 tr{
     border-bottom:10px;
-
+    text-align: center;
+    height: 2rem;
 }

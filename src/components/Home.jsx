@@ -5,9 +5,9 @@ import { Form } from "react-router-dom";
 export const Home = () => {
     return(
         <div className={`${styles.HomePage}`}>
-        <h1>Control Your Money</h1>
-        <h2>Save it. Spend it. Manage it.</h2>
-        <p>Start your personal budgeting journey with us.</p>
+        <h1 className={`${styles.head}`}>Control Your <span className={`${styles.colorText}`}>Money.</span></h1>
+        <h2 className={`${styles.head1}`}>Save it. Spend it. Manage it.</h2>
+        <p className={`${styles.head2}`}>Start your personal budgeting journey with us.</p>
         <Form method="post" className={`${styles.form}`}>
             <input 
             type="text" 
