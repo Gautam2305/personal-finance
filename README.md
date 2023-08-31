@@ -2,7 +2,7 @@
 
 The Expense Tracker App is a web-based application that helps users track and manage their expenses effectively. This documentation provides a comprehensive explanation of the website for the Expense Tracker App, including its features, functionalities, and overall structure.
 ### Live Site
-<a target="_blank" href="https://jolly-forest-073f45810.3.azurestaticapps.net/">https://moneyminder.onrender.com//</a>
+<a target="_blank" href="https://moneyminder.onrender.com/">https://moneyminder.onrender.com/</a>
 
 # Description
 <strong>1. Purpose:</strong>
